@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@keyframes loading-bar {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-loading-bar {
+  animation: loading-bar 1.5s infinite;
+}
+
+@layer base {
+  body {
+    @apply antialiased text-gray-900;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-md font-medium transition-all duration-200;
+  }
+
+  .btn-primary {
+    @apply bg-[#00c6ff] text-white hover:bg-[#00b3e6] active:bg-[#00a3d9];
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-md p-6;
+  }
+}
+
+/* Avatar */
+#avatar-container {
+  height: 500px;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+}
+
+#avatar-loading {
+  font-size: 3em;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-[#00c6ff] rounded-full;
+}
